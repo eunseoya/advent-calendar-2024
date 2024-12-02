@@ -3,12 +3,12 @@ import React from 'react';
 import useBibleVerse from '../hooks/useBibleVerse';
 
 const DayLayout = ({ dayNumber, children, verseReference }) => {
-    // const { verse, verseRef, loading, error } = useBibleVerse(verseReference);
+    const { verse, verseRef, loading, error } = useBibleVerse(verseReference);
 
-    const verse = "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life."
-    const verseRef = "John 3:16"
-    const loading = false
-    const error = false
+    // const verse = "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life."
+    // const verseRef = "John 3:16"
+    // const loading = false
+    // const error = false
     
     return (
         <div className="flex flex-col min-h-[calc(100vh-8rem)] bg-[#fdffff] rounded-lg p-2 sm:p-4 mx-2 sm:mx-4">
