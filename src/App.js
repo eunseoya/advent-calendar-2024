@@ -42,7 +42,7 @@ const App = () => {
 
       return (
         <LanguageProvider>
-          <Router>
+          <Router basename="/advent-calendar-2024">
             <div className="min-h-screen h-full flex flex-col justify-between bg-[#6d1c22]">
               <Header />
               <main className="flex-grow flex justify-center items-center p-2 sm:p-4">
