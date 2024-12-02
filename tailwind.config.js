@@ -4,10 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // Add custom fonts here
-        christmas: ['Mountains of Christmas', 'cursive'],
+        korean: ['Ownglyph_ParkDaHyun', 'sans-serif'],
         sans: ['Inter', 'sans-serif'],
-        // Add more fonts as needed
       }
     },
   },

@@ -4,8 +4,15 @@ import PasscodeForm from './PasscodeForm';
 import AdventCalendar from './AdventCalendar';
 import { LanguageProvider } from './context/LanguageContext';
 import LanguageToggle from './components/LanguageToggle';
-import Day1 from './days/Day1';
-import Day2 from './days/Day2';
+
+const requireDays = require.context('./days', false, /Day[0-9]+\.js$/);
+const dayComponents = requireDays.keys()
+    .sort((a, b) => {
+        const dayA = parseInt(a.match(/Day(\d+)\.js$/)[1], 10);
+        const dayB = parseInt(b.match(/Day(\d+)\.js$/)[1], 10);
+        return dayA - dayB;
+    })
+    .map(path => requireDays(path).default);
 
 const Header = () => {
   const location = useLocation();
@@ -49,8 +56,14 @@ const App = () => {
                 {isAuthenticated ? (
                   <Routes>
                     <Route exact path="/" element={<AdventCalendar />} />
-                    <Route path="/day1" element={<Day1 />} />
-                    <Route path="/day2" element={<Day2 />} />
+                    {Array.from({ length: 25 }, (_, i) => (
+                      <Route 
+                          key={`day${i + 1}`}
+                          path={`/day${i + 1}`}
+                          element={React.createElement(dayComponents[i])}
+                      />
+                  ))}
+
                   </Routes>
                 ) : (
                   <PasscodeForm onPasscodeSubmit={handlePasscodeSubmit} />

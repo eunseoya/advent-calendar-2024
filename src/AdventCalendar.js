@@ -35,6 +35,9 @@ const AdventCalendar = () => {
                                 </Link>
                             ) : (
                                 `${day}`
+                                // <Link to={`/day${day}`} className="text-center w-full h-full flex items-center justify-center text-black">
+                                // {day}
+                                //</Link>
                             )}
                         </div>
                     ))}
