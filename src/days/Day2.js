@@ -48,7 +48,7 @@ const Day2 = () => {
     const songs = [
         { path: '/audio/navidad_feliciano.mp3', title: 'Feliz Navidad' },
         { path: '/audio/jinglebellrock_helms.mp3', title: 'Jingle Bell Rock' },
-        { path: '/audio/letitsnow_martin.mp3', title: 'Let It Snow' },
+        { path: '/audio/letitsnow_martin.mp3', title: 'Let It Snow', hint: '()! x3 (just put one)' },
         { path: '/audio/mistletoe_bieber.mp3', title: 'Mistletoe' },
     ];
 
@@ -69,12 +69,19 @@ const Day2 = () => {
                 setLoading(false);
             }, 2000);
         } else {
-            setIsComplete(true);
+            setTimeout(() => {
+                setIsComplete(true);
+            }, 2000);
         }
     };
 
     const isCorrectGuess = () => {
-        return guess.toLowerCase().trim() === songs[currentSong].title.toLowerCase();
+        const correctTitle = songs[currentSong].title.toLowerCase();
+        const userGuess = guess.toLowerCase().trim();
+        if (correctTitle === 'jingle bell rock' && (userGuess === 'jingle bell rock' || userGuess === 'jingle bell')) {
+            return true;
+        }
+        return userGuess === correctTitle;
     };
 
     if (isComplete) {
@@ -106,6 +113,12 @@ const Day2 = () => {
                         key={currentSong}
                         src={songs[currentSong].path}
                     />
+                )}
+
+                {songs[currentSong].hint && (
+                    <div className="text-center text-sm text-gray-500">
+                        {songs[currentSong].hint}
+                    </div>
                 )}
 
                 {showResult ? (

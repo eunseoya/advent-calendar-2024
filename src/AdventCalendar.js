@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getDate, getMonth } from 'date-fns';
 import { toZonedTime } from 'date-fns-tz';
+import SubscriptionForm from './components/SubscriptionForm';
+import { FaBell } from 'react-icons/fa';
 
 const AdventCalendar = () => {
     const currentDate = toZonedTime(new Date(), 'America/New_York');
     const currentDay = getDate(currentDate);
     const currentMonth = getMonth(currentDate);
+    const [showForm, setShowForm] = useState(false);
+
+    const toggleSubscriptionForm = () => {
+        setShowForm(!showForm);
+    };
 
     const rows = [
         [25],
@@ -43,6 +50,10 @@ const AdventCalendar = () => {
                     ))}
                 </div>
             ))}
+            <div className="flex justify-center mt-4 p-2">
+                <FaBell className="w-6 h-6 text-white cursor-pointer" onClick={toggleSubscriptionForm} />
+            </div>
+            {showForm && <SubscriptionForm onClose={toggleSubscriptionForm} />}
         </div>
     );
 };
