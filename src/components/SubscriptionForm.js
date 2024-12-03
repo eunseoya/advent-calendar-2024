@@ -14,7 +14,7 @@ const SubscriptionForm = ({ onClose }) => {
             nameLabel: 'Name:',
             emailLabel: 'Email:',
             subscribeButton: 'Sign me up',
-            successMessage: 'See you at your inbox',
+            successMessage: 'See you at your inbox :)',
             failureMessage: 'Failed :\(. Please let gloria know.'
         },
         ko: {
@@ -22,7 +22,7 @@ const SubscriptionForm = ({ onClose }) => {
             nameLabel: '이름:',
             emailLabel: '이메일:',
             subscribeButton: '구독하기',
-            successMessage: '메일함에서 만나요',
+            successMessage: '메일함에서 만나요 :)',
             failureMessage: '구독에 실패했어요ㅠ 은서에게 알려주세요.'
         }
     };
