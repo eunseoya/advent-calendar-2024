@@ -27,7 +27,7 @@ const Day3 = () => {
             <div className="w-full flex items-center justify-center p-8 md:p-16 lg:p-24">
                 <div className="text-center">
                     <h1 className="text-2xl font-bold mb-4">{text[language].title}</h1>
-                    <img src='/img/day3.png' alt=""/>
+                    {/* <img src='/img/day3.png' alt=""/> */}
                     <p>{text[language].message}</p>
                     <p>{text[language].screenshot}</p>
                     <PhotoUploader />
