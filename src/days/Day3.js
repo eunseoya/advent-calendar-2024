@@ -30,7 +30,7 @@ const Day3 = () => {
                     {/* <img src='/img/day3.png' alt=""/> */}
                     <p>{text[language].message}</p>
                     <p>{text[language].screenshot}</p>
-                    <PhotoUploader />
+                    <PhotoUploader /> 
                 </div>
             </div>
         </DayLayout>
