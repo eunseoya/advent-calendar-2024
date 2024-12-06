@@ -3,7 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 let showMessage = true;
 
-const today_message = "Day 5 is ready!"//"Today's new mission is ready! 🎉";
+const today_message = "Day 6 is ready!"//"Today's new mission is ready! 🎉";
 const today_message_ko = '오늘의 미션을 확인하세요! 🎉';
 
 const Announcement = ({ onClose }) => {

@@ -54,6 +54,7 @@ const App = () => {
   const [isPasscodeAuthenticated, setIsPasscodeAuthenticated] = useState(false);
   const correctPasscode = '1225';
 
+  
   return (
     // <AuthProvider>
       <LanguageProvider>
@@ -95,7 +96,7 @@ const AppContent = ({ isPasscodeAuthenticated, setIsPasscodeAuthenticated, corre
       <main className="flex-grow flex justify-center items-center p-2 sm:p-4">
         {isPasscodeAuthenticated ? (
           <>
-            {isAnnouncementOpen && <Announcement onClose={handleCloseAnnouncement} />}
+            {/* {isAnnouncementOpen && <Announcement onClose={handleCloseAnnouncement} />} */}
             <Routes>
               <Route exact path="/" element={<AdventCalendar />} />
               <Route path="/subscribe" element={<SubscriptionForm />} />
