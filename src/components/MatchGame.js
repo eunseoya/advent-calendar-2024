@@ -18,7 +18,7 @@ const MatchGame = () => {
             continue: "Continue ➡️",
             matchgirl: "Little Match Girl ",
             placeholder: " [your name]",
-            survived: "survived!🎉",   
+            survived: "survived",   
             hour0_msg: "It's midnight, and you're still selling matches on the street. But it's gotten too cold.",
 
             hour0_choice_1: "Use all matches to warm up 🔥🔥🔥",
@@ -63,7 +63,7 @@ const MatchGame = () => {
             continue: "계속 ➡️",
             matchgirl: "성냥팔이 ",
             placeholder: "   [이름]",
-            survived: "생존!🎉",
+            survived: "생존",
             hour0_msg: "당신은 자정까지 거리에서 성냥을 팔고 있다. 하지만 이젠 너무 추워졌다.",
             hour0_choice_1: "성냥을 다 써서 따뜻해진다 🔥🔥🔥",
             hour0_choice_1_msg: "모든 성냥을 소진한 뒤 추위로 사망",
@@ -71,7 +71,7 @@ const MatchGame = () => {
             hour0_choice_2_msg: "하나씩 쓰려다 전부 불이 붙어버려 성냥을 소진한 뒤 추위로 사망",
             hour0_choice_3: "추위를 견디고 계속 판다 💪",
             hour0_choice_4: "옆 상점에 들어간다 🛍️",
-            hour0_choice_4_msg: "상점 주인이 당신의 성냥을 빼앗고 거리로 내쫗는다. 추위로 사망",
+            hour0_choice_4_msg: "상점 주인이 당신의 성냥을 빼앗고 거리로 내쫓는다. 추위로 사망",
 
             hour2_msg: "이제 두시다. 다행히 많이 팔려서 성냥 두개비가 남았다. 어쩐지 수상한 사람이 다가온다.. 하지만 얼굴이 잘 보이지 않는다.",
             hour2_choice_1: "사람을 무시하고 다음 사람을 기다린다 🙅",
@@ -237,12 +237,12 @@ const MatchGame = () => {
                         onChange={(e) => setPlayerName(e.target.value)}
                         placeholder={t.placeholder}
                         required
-                        style={{ width: '100px' }} 
+                        style={{ width: '100px', marginRight: '10px' }} 
                     />
-                    <button type="submit">{t.survived}</button>
+                    <button type="submit" style={{ color: 'white', backgroundColor: '#4f9065', border: '5px solid #4f9065', borderRadius: '5px' }}>{t.survived}</button>
                 </form>
             )}
-            {submitted && <p>{t.matchgirl} {playerName} {t.survived}!</p>}
+            {submitted && <p>{t.matchgirl} {playerName} {t.survived}🎉</p>}
         </div>
     );
 };

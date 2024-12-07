@@ -10,7 +10,7 @@ const SubscriptionForm = ({ onClose }) => {
 
     const translations = {
         en: {
-            subscribeTitle: 'Stay updated on new missions!',
+            subscribeTitle: 'Receive daily reminders 💌',
             nameLabel: 'Name:',
             emailLabel: 'Email:',
             subscribeButton: 'Sign me up',
@@ -18,7 +18,7 @@ const SubscriptionForm = ({ onClose }) => {
             failureMessage: 'Failed :\(. Please let gloria know.'
         },
         ko: {
-            subscribeTitle: '새 미션을 놓치지 마세요',
+            subscribeTitle: '잊지 않게 편지가 찾아가요 💌',
             nameLabel: '이름:',
             emailLabel: '이메일:',
             subscribeButton: '구독하기',

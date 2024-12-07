@@ -24,6 +24,7 @@ const Day6 = () => {
                 <h2 className="text-l font-bold mb-4">{t.title}</h2>
                 <MatchGame /> 
             </div>
+            
         </DayLayout>
     );
 };
