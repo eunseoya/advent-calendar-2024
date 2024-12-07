@@ -9,22 +9,22 @@ function PhotoUploader() {
 
   const translations = {
     en: {
-      uploadScreenshot: "Upload Screenshot",
+      uploadScreenshot: "Upload Photo",
       chooseFile: "Choose file",
-      uploading: "Sharing warm words...",
+      uploading: "Sharing warmth...",
       upload: "Upload",
       pleaseSelectFile: "Please select a file.",
-      thankYou: "Thank you for sharing warmth",
+      thankYou: "Thank you for sharing 💌",
       error: "Error:",
       uploadFailed: "Upload failed:"
     },
     ko: {
-      uploadScreenshot: "스샷 업로드",
+      uploadScreenshot: "사진 업로드",
       chooseFile: "파일 선택",
       uploading: "따뜻함 전달 중...",
       upload: "업로드",
       pleaseSelectFile: "파일을 선택해주세요.",
-      thankYou: "따뜻함이 전달 되었어요",
+      thankYou: "따뜻함이 전달 되었어요 💌",
       error: "오류:",
       uploadFailed: "업로드 실패:"
     }
@@ -77,7 +77,7 @@ function PhotoUploader() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-md mx-auto mt-4 p-6 bg-white rounded-lg shadow-md">
       <h1 className="text-base mb-4">{t.uploadScreenshot}</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         {!loading ? (
@@ -97,7 +97,7 @@ function PhotoUploader() {
           {t.upload}
         </button>
       </form>
-      {message && <p className="mt-4 text-center text-red-500">{message}</p>}
+      {message && <p className="mt-4 text-center text-[#4f9065]">{message}</p>}
     </div>
   );
 }
