@@ -42,13 +42,13 @@ const Day8 = () => {
             dayNumber={8}
             verseReference="isaiah+9:6"
         >   
-        <div className="w-full flex items-center justify-center mt-4 md:p-16 lg:p-24">
+        <div className="w-full flex items-center justify-center mt-4">
         <div className="text-center px-2 md:px-0">
             <h1 className="text-xl font-bold">{t.title}</h1>
             </div>
         </div>
             
-            <div className="w-full flex flex-col items-center justify-center p-4 md:p-16 lg:p-24">
+            <div className="w-full flex flex-col items-center justify-center p-4">
                 {activeTab === 'tab1' && (
                     <div className="w-full flex flex-col items-center px-2 md:px-0"> 
                     <h2 className="mb-4">{t.day3_title}</h2>
@@ -79,12 +79,12 @@ const Day8 = () => {
                     </div>
                 )}
             </div>
-            <div className="tabs text-l mb-4 w-full grid grid-cols-4 gap-2 px-2 md:px-0">
+            <div className="tabs text-l mb-4 w-full grid grid-cols-4 gap-2 px-2 md:px-0 "> 
                     <button className="w-full p-1 bg-[#f3eeda] text-[#6d1c22] rounded" onClick={() => setActiveTab('tab1')}>Day 3</button>
                     <button className="w-full p-1 bg-[#f3eeda] text-[#6d1c22] rounded" onClick={() => setActiveTab('tab2')}>Day 5</button>
                     <button className="w-full p-1 bg-[#f3eeda] text-[#6d1c22] rounded" onClick={() => setActiveTab('tab3')}>Day 7</button>
                     <button className="w-full p-1 bg-[#f3eeda] text-[#6d1c22] rounded" onClick={() => setActiveTab('tab4')}>🙏</button>
-                </div>
+            </div>
         </DayLayout>
     );
 };
