@@ -8,6 +8,15 @@ import { useLanguage } from '../context/LanguageContext';
 
 const Day${dayNumber} = () => {
     const { language } = useLanguage();
+    const translations = {
+        en: {
+            // item: 'sample text', 
+        },
+        ko: {
+            // item: '샘플 문구',
+        }
+    };
+    const t = translations[language];
 
     return (
         <DayLayout
@@ -28,10 +37,10 @@ export default Day${dayNumber};
 const verses = [
     "1corinthians+13:4-7",
     "matthew 2:10",
-    "matthew+1:22-23",
+    "matthew+1:22-23", 
     "john 1:29",
     "romans 12:10",
-    "luke 1:35",
+    "luke 1:35", // 7
     "luke 1:14",
     "isaiah+9:6",
     "luke+2:20",
@@ -60,7 +69,7 @@ const generateDays = () => {
     }
 
     // Generate files for days 1-25
-    for (let i = 3; i <= 25; i++) {
+    for (let i = 9; i <= 25; i++) {
         const fileName = path.join(daysDir, `Day${i}.js`);
         const verseRef = verses[i - 1] || `luke+2:${i}`; // Fallback verse reference
         fs.writeFileSync(fileName, template(i, verseRef));

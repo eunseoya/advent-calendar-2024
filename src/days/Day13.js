@@ -4,6 +4,15 @@ import { useLanguage } from '../context/LanguageContext';
 
 const Day13 = () => {
     const { language } = useLanguage();
+    const translations = {
+        en: {
+            // item: 'sample text', 
+        },
+        ko: {
+            // item: '샘플 문구',
+        }
+    };
+    const t = translations[language];
 
     return (
         <DayLayout

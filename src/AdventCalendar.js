@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import { getDate, getMonth } from 'date-fns';
 import { toZonedTime } from 'date-fns-tz';
 import SubscriptionForm from './components/SubscriptionForm';
-import { FaBell } from 'react-icons/fa';
+import { FaBell , FaBullhorn } from 'react-icons/fa'; 
+import Announcement from './components/Announcement';
+// announcement icon from react icons
+// import { Fa
 
 const AdventCalendar = () => {
     const currentDate = toZonedTime(new Date(), 'America/New_York');
@@ -13,6 +16,10 @@ const AdventCalendar = () => {
 
     const toggleSubscriptionForm = () => {
         setShowForm(!showForm);
+    };
+    const [showMessageState, setShowMessageState] = useState(false);
+    const toggleMessage = () => {
+        setShowMessageState(!showMessageState);
     };
 
     const rows = [
@@ -50,10 +57,13 @@ const AdventCalendar = () => {
                     ))}
                 </div>
             ))}
-            <div className="flex justify-center mt-4 p-2">
+            <div className="flex justify-center mt-4 p-2 text-[#6d1c22]">
                 <FaBell className="w-6 h-6 text-white cursor-pointer" onClick={toggleSubscriptionForm} />
+                <p>__</p>
+                <FaBullhorn className="w-6 h-6 text-white cursor-pointer" onClick={toggleMessage} />
             </div>
             {showForm && <SubscriptionForm onClose={toggleSubscriptionForm} />}
+            {showMessageState && <Announcement onClose={toggleMessage} />}
         </div>
     );
 };

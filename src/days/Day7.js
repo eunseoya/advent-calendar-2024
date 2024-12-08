@@ -22,7 +22,7 @@ const Day7 = () => {
     return (
         <DayLayout
             dayNumber={7}
-            verseReference="matthew+1:22-23"
+            verseReference="luke 1:14"
         >
             <div className="w-full flex items-center justify-center p-8 md:p-16 lg:p-24">
                 <div className="text-center">
@@ -30,7 +30,6 @@ const Day7 = () => {
                     <div className="flex mb-4 justify-center">
                     <img src="https://i.ibb.co/j3T9r8c/day7-tree.jpg" alt="day7-tree" border="0" className="w-1/2 md:w-1/3 lg:w-1/4"></img>
                     </div>
-                    {/* <a href="https://ibb.co/fr2VxXh"><img src="https://i.ibb.co/SVPD36h/day7-tree.jpg" alt="day7-tree" border="0"></a> */}
                     <p>{text[language].message}</p>
                     <p>{text[language].screenshot}</p>
                     <PhotoUploader /> 
