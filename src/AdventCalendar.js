@@ -19,7 +19,7 @@ const AdventCalendar = () => {
     };
     const [showMessageState, setShowMessageState] = useState(false);
     const toggleMessage = () => {
-        setShowMessageState(!showMessageState);
+        setShowMessageState(prevState => !prevState);
     };
 
     const rows = [

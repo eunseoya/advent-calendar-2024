@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-
-let showMessage = true;
 
 const today_message = "You made it to the end of Week 1! \
     On Monday, the past week's missions will no longer count submissions. \
@@ -13,7 +11,7 @@ const today_message_ko = "1주차 미션이 끝났어요! \
 
 const Announcement = ({ onClose }) => {
     const { language } = useLanguage();
-    const [showMessageState, setShowMessageState] = useState(showMessage);
+    const [showMessageState, setShowMessageState] = useState(true);
     const translations = {
         en: {
             announcementTitle: 'Announcement 📢',
@@ -28,25 +26,9 @@ const Announcement = ({ onClose }) => {
     };
 
     const t = translations[language];
-    useEffect(() => {
-        const hasSeenMessage = localStorage.getItem('hasSeenMessage');
-        if (hasSeenMessage) {
-            setShowMessageState(false);
-            showMessage = false;
-        }
-    }, []);
-
-    const handleDontShowAgain = () => {
-        localStorage.setItem('hasSeenMessage', 'true');
-        setShowMessageState(false);
-        showMessage = false;
-        onClose();
-    };
 
     const handleClose = () => { 
-        localStorage.setItem('hasSeenMessage', 'true');
         setShowMessageState(false);
-        showMessage = false;
         onClose();
     }
 
@@ -58,15 +40,9 @@ const Announcement = ({ onClose }) => {
                 <button className="absolute top-2 right-2 text-2xl" onClick={handleClose}>X</button>
                 <h2 className="text-xl mb-4">{t.announcementTitle}</h2>
                 <p className="mt-4 text-center">{t.message}</p>
-                {/* <div className="flex justify-center">
-                    <button className="mt-4 bg-[#4f9065] text-white py-2 px-4 rounded" onClick={handleDontShowAgain}>
-                        {t.dontShowAgain}
-                    </button>
-                </div> */}
             </div>
         </div>
     );
 };
 
-export { showMessage };
 export default Announcement;

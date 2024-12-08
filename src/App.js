@@ -8,7 +8,7 @@ import Profile from './components/Profile';
 import Login from './components/Login';
 import { FaUser } from 'react-icons/fa';
 import SubscriptionForm from './components/SubscriptionForm';
-import Announcement, { showMessage } from './components/Announcement';
+import Announcement from './components/Announcement';
 // import { AuthProvider } from './context/AuthContext';
 
 const requireDays = require.context('./days', false, /Day[0-9]+\.js$/);
@@ -20,7 +20,7 @@ const dayComponents = requireDays.keys()
   })
   .map(path => requireDays(path).default);
 
-  const Header = ({ isPasscodeAuthenticated }) => {
+const Header = ({ isPasscodeAuthenticated }) => {
     const location = useLocation();
     const isDayPage = location.pathname.startsWith('/day');
   
@@ -48,13 +48,12 @@ const dayComponents = requireDays.keys()
       </div>
       </header>
     );
-  };
+};
 
 const App = () => {
   const [isPasscodeAuthenticated, setIsPasscodeAuthenticated] = useState(false);
   const correctPasscode = '1225';
 
-  
   return (
     // <AuthProvider>
       <LanguageProvider>
@@ -70,9 +69,9 @@ const App = () => {
   );
 };
 
-const AppContent = ({ isPasscodeAuthenticated, setIsPasscodeAuthenticated, correctPasscode}) => {
+const AppContent = ({ isPasscodeAuthenticated, setIsPasscodeAuthenticated, correctPasscode }) => {
   const navigate = useNavigate();
-  const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(showMessage);
+  const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(true);
 
   const handleCloseAnnouncement = () => {
     setIsAnnouncementOpen(false);
@@ -81,9 +80,7 @@ const AppContent = ({ isPasscodeAuthenticated, setIsPasscodeAuthenticated, corre
   const handlePasscodeSubmit = (passcode) => {
     if (passcode === correctPasscode) {
       setIsPasscodeAuthenticated(true);
-      if (showMessage) {
-        setIsAnnouncementOpen(true);
-      }
+      setIsAnnouncementOpen(true);
       navigate('/');
     } else {
       alert('Incorrect passcode');
