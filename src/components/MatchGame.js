@@ -13,6 +13,7 @@ const MatchGame = () => {
     const { language } = useLanguage();
     const translations = {
         en: {
+            closed: "Unfortunately, Week 1 submissions are closed. Please participate in this week's missions! 🎄",
             instructions: "One cold night on the last day of December, Little Match Girl is selling matches on the street. Survive through the night until the year is over.",
             restart: "Restart 🔄",
             continue: "Continue ➡️",
@@ -58,6 +59,7 @@ const MatchGame = () => {
             hour8_msg: "Your grandmother guides you to a church that serves breakfast after early morning prayer🙏 Happy new year! Write your name below to let Gloria know."
         },
         ko: {
+            closed: "아쉽게도 1주차 미션 참여 기간은 끝났어요. 이번 주 미션에 참여해주세요! 🎄",
             instructions: "12월의 마지막날 밤, 찬바람이 몰아치는 길거리에서 사람들에게 성냥을 파는 성냥팔이 소녀. 그 소녀가 되어 새해까지 살아남아보세요.",
             restart: "다시 도전 🔄",
             continue: "계속 ➡️",
@@ -229,20 +231,21 @@ const MatchGame = () => {
                 ))}
             </div>
             {gameState === 'hour8' && !submitted && (
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="playerName">{t.matchgirl}</label>
-                    <input
-                        type="text"
-                        value={playerName}
-                        onChange={(e) => setPlayerName(e.target.value)}
-                        placeholder={t.placeholder}
-                        required
-                        style={{ width: '100px', marginRight: '10px' }} 
-                    />
-                    <button type="submit" style={{ color: 'white', backgroundColor: '#4f9065', border: '5px solid #4f9065', borderRadius: '5px' }}>{t.survived}</button>
-                </form>
+                <p>{t.closed}</p>
+                // <form onSubmit={handleSubmit}>
+                //     <label htmlFor="playerName">{t.matchgirl}</label>
+                //     <input
+                //         type="text"
+                //         value={playerName}
+                //         onChange={(e) => setPlayerName(e.target.value)}
+                //         placeholder={t.placeholder}
+                //         required
+                //         style={{ width: '100px', marginRight: '10px' }} 
+                //     />
+                //     <button type="submit" style={{ color: 'white', backgroundColor: '#4f9065', border: '5px solid #4f9065', borderRadius: '5px' }}>{t.survived}</button>
+                // </form>
             )}
-            {submitted && <p>{t.matchgirl} {playerName} {t.survived}🎉</p>}
+            {/* {submitted && <p>{t.matchgirl} {playerName} {t.survived}🎉</p>} */}
         </div>
     );
 };

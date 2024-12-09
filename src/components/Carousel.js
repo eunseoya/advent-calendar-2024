@@ -20,6 +20,7 @@ const Carousel = ({ type, items }) => {
             const fetchTexts = async () => {
                 const querySnapshot = await getDocs(collection(db, items));
                 const textsArray = querySnapshot.docs.map(doc => doc.data().text);
+                textsArray.sort(() => Math.random() - 0.5);
                 setTexts(textsArray);
             };
             fetchTexts();

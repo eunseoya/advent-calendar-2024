@@ -13,12 +13,15 @@ const Day5 = () => {
         en: {
             title: 'Share your favorite Christmas memory',
             message: "Share your favorite Christmas memory! It could be a story, a tradition, or a special moment.",
-            alternateMessage: "You can now click the title to share another story or come back here directly."
+            alternateMessage: "You can now click the title to share another story or come back here directly.",
+            closed: "Unfortunately, Week 1 submissions are closed. Submissions can be viewed at Happy Sunday Gallery (Day 8) 🎄"
+
         },
         ko: {
             title: '좋아하는 크리스마스의 추억',
             message: "가장 기억에 남는 크리스마스는 어땠나요? 이야기, 전통, 특별한 순간 등을 나눠주세요.",
-            alternateMessage: "이제 다른 추억을 기록하거나 다시 추억들을 보려면 제목을 클릭하세요."
+            alternateMessage: "이제 다른 추억을 기록하거나 다시 추억들을 보려면 제목을 클릭하세요.",
+            closed: "아쉽게도 1주차 미션 참여 기간은 끝났어요. 여러분이 보내주신 추억은 즐거운 주일 갤러리에서 확인하실 수 있어요 🎄"
         }
     };
 
@@ -37,13 +40,15 @@ const Day5 = () => {
             <div className="w-full flex items-center justify-center p-8 md:p-16 lg:p-24">
                 <div className="w-full flex flex-col items-center">
                     <h2 className="text-l font-bold mb-4" onClick={handleTitleClick}>{t.title}</h2>
+                    
                     <p>{submittedText != ('') ? t.alternateMessage : t.message}</p>
                     <div className="mt-8">
-                        {showTextDisplayer ? ( 
+                        <p>{t.closed}</p>
+                        {/* {showTextDisplayer ? ( 
                             <TextDisplayer />
                         ) : (
                             <TextUploader day={5} submittedText={submittedText} setSubmittedText={setSubmittedText} />
-                        )}
+                        )} */}
                     </div>
                 </div>
             </div>

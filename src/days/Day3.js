@@ -10,12 +10,14 @@ const Day3 = () => {
         en: {
             title: "Warm words for a Winter's day",
             message: "Share the warmth with someone through a kind message. Take a moment to send a text to a friend, family member, or anyone who could use a little encouragement.",
-            screenshot: "Share a screenshot of your text - feel free to exclude names (an anonymized version will be shared on this page)"
+            screenshot: "Share a screenshot of your text - feel free to exclude names (an anonymized version will be shared on this page)",
+            closed: "Unfortunately, Week 1 submissions are closed. Submissions can be viewed at Happy Sunday Gallery (Day 8) 🎄"
         },
         ko: {
             title: "겨울날의 따뜻한 한마디",
             message: "친구, 가족 또는 격려가 필요한 사람에게 따뜻한 말 한마디를 보내주세요!",
-            screenshot: "보낸 문자를 스샷해서 올려주세요 - 이름을 제외해도 좋아요 (익명 버전이 이 페이지에 공유돼요)"
+            screenshot: "보낸 문자를 스샷해서 올려주세요 - 이름을 제외해도 좋아요 (익명 버전이 이 페이지에 공유돼요)",
+            closed: "아쉽게도 1주차 미션 참여 기간은 끝났어요. 여러분이 보내주신 파일은 즐거운 주일 갤러리에서 확인하실 수 있어요 🎄"
         }
     };
 
@@ -30,8 +32,13 @@ const Day3 = () => {
                     {/* <img src='/img/day3.png' alt=""/> */}
                     <p>{text[language].message}</p>
                     <p>{text[language].screenshot}</p>
-                    <PhotoUploader /> 
+                    
+                    {/* <PhotoUploader />  */}
+                    <div className="mt-8">
+                    <p>{text[language].closed}</p>
+                    </div>
                 </div>
+                
             </div>
         </DayLayout>
     );

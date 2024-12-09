@@ -25,7 +25,8 @@ const Day2 = () => {
             submitFinal: "Submit Final Guess",
             submitNext: "Submit & Next",
             song: "Song",
-            sendScreenshot: "Send a screenshot to Gloria to track your progress (no account feature yet.. coming soon!)"
+            sendScreenshot: "Unfortunately, Week 1 submissions are closed. Please participate in this week's missions! 🎄"
+            //"Send a screenshot to Gloria to track your progress (no account feature yet.. coming soon!)"
         },
         ko: {
             correct: "정답!",
@@ -40,7 +41,8 @@ const Day2 = () => {
             submitFinal: "마지막..!",
             submitNext: "확인",
             song: "노래",
-            sendScreenshot: "진행 상황을 기록하기 위해 스크린샷을 은서에게 보내주세요 (계정은 아직.. 곧 만들 수 있어요)"
+            sendScreenshot: "아쉽게도 1주차 미션 참여 기간은 끝났어요. 이번 주 미션에 참여해주세요! 🎄"
+            //"진행 상황을 기록하기 위해 스크린샷을 은서에게 보내주세요 (계정은 아직.. 곧 만들 수 있어요)"
         }
     };
 

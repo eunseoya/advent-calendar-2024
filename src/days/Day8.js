@@ -13,9 +13,9 @@ const Day8 = () => {
             day5_title: 'Favorite Christmas Memory',
             day7_title: 'O Christmas Tree: Worldwide',
             prayer_title: 'Prayer Requests',
-            prayer_instruction: 
-            "I'm thinking of you and want to pray for you. If there's anything on your mind, \
-                big or small, please share it here."
+            prayer_instruction: "Thank you for sharing. I'm thinking of you and praying for you! See you again next Sunday."
+            // "I'm thinking of you and want to pray for you. If there's anything on your mind, \
+            //     big or small, please share it here."
         },
         ko: {
             title: "즐거운 주일 전시회",
@@ -23,8 +23,9 @@ const Day8 = () => {
             day5_title: '좋아하는 크리스마스의 추억',
             day7_title: '온 세상의 트리를 모아줘',
             prayer_title: '기도제목',
-            prayer_instruction: "여러분을 생각하며 기도하고 싶어요. 고민이나 기도 부탁하고 싶은 것이 있으면 \
-                사소한 것이라도 공유해주세요."
+            prayer_instruction: "적어주신 기도제목을 읽고 여러분을 생각하며 기도하고 있어요. 다음주 일요일에 또 만나요!"
+                // "여러분을 생각하며 기도하고 싶어요. 고민이나 기도 부탁하고 싶은 것이 있으면 \
+                // 사소한 것이라도 공유해주세요."
         }
     };
 
@@ -32,10 +33,15 @@ const Day8 = () => {
     const [activeTab, setActiveTab] = useState('tab1');
 
     const day3_images = [ "WHjQ5w2/day3-2.jpg", "f82NFdh/day3-1.jpg", "WP7DKRX/day3-3.png", "KFHBsSC/day3-4.jpg", "Kmc92Wm/day3-5.jpg", "Dk6B4mp/day3-6.png", "1JDzXmh/day3-7.png", "VLcnw0V/day3-8.jpg", "2Mh7y04/day3-9.jpg", "mcmB4t2/day3-10.jpg", "QXzfKQP/day3-11.png", "R0LqxxR/day3-12.jpg", "471tDXN/day3-13.png", "L5cFvfd/day3-14.png", "qy06Spq/day3-15.png", "sjxjXv0/day3-16.png", "zJWbVv2/day3-17.jpg", "jzNqv7s/day3-18.jpg" ];
-    const day7_images = ["874KvfL/day7-6.jpg", "86P9MKD/day7-5.jpg", "YBPzJgK/day7-4.jpg", "YDfLzrH/day7-3.png", "j6kwLsB/day7-1.jpg", "HHzkcXS/day7-2.jpg"];
+    const day7_images = ["874KvfL/day7-6.jpg", "86P9MKD/day7-5.jpg", "YBPzJgK/day7-4.jpg", "YDfLzrH/day7-3.png", "j6kwLsB/day7-1.jpg", 
+                        "HHzkcXS/day7-2.jpg",  "Tm7Pmq2/day7-7.jpg", "tzhnv1x/day7-8.jpg", "VwxcTRf/day7-9.jpg", "0GzCCDg/day7-10.jpg"];
+
 
     const day3_image_urls = day3_images.map(image => `https://i.ibb.co/${image}`);
     const day7_image_urls = day7_images.map(image => `https://i.ibb.co/${image}`);
+    //randomize order of images
+    day3_image_urls.sort(() => Math.random() - 0.5);
+    day7_image_urls.sort(() => Math.random() - 0.5);
     
     return (
         <DayLayout
@@ -74,7 +80,7 @@ const Day8 = () => {
                     </div>
                     <p className="text-center">{t.prayer_instruction}</p>
                     <div className="mt-4">
-                        <PrayerRequest />
+                        {/* <PrayerRequest /> */}
                     </div>
                     </div>
                 )}
